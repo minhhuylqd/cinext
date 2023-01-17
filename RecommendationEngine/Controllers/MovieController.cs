@@ -7,13 +7,16 @@ using RecommendationEngine.Models;
 [Route("api/[controller]")]
 public class MovieController : ControllerBase {
 
-  private readonly IConfiguration _configuration;
-  private string apiKey = string.Empty;
+  // private readonly IConfiguration _configuration;
+  // private string apiKey = string.Empty;
+
+  private string apiKey = Environment.GetEnvironmentVariable("CINEXT_APIKEY");
   
-  public MovieController(IConfiguration configuration) {
-    _configuration = configuration;
-    apiKey = _configuration.GetSection("AppSettings:ApiKey").Value;
-  }
+  
+  // public MovieController(IConfiguration configuration) {
+  //   _configuration = configuration;
+  //   apiKey = _configuration.GetSection("AppSettings:ApiKey").Value;
+  // }
 
   [HttpGet("{movieQuery}")]
   public async Task<IActionResult> getMovie(string movieQuery) {
