@@ -7,8 +7,9 @@ services:
     image: cinext-recommendation-api
     container_name: cinext-recommendation-api
     restart: unless-stopped
-    ports:
-      - "8000:80"
+    # Allow port when running on localhost, turn off port when running Caddy server
+    # ports:
+    #   - "8000:80"
 
   caddy:
     image: caddy/caddy:2.2.1-alpine
