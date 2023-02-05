@@ -458,3 +458,4 @@ appsettings.json
 .env
 
 Caddyfile
+docker-compose.yml
