@@ -1,5 +1,5 @@
 domain.dev {
-  reverse_proxy cinext-recommendation-api:8000 {
+  reverse_proxy cinext-recommendation-api:80 {
     header_down Strict-Transport-Security max-age=31536000;
   }
 }
